@@ -1,0 +1,58 @@
+{
+  "menu": {
+    "del_trompo_al_pastor": [
+      { "platillo": "Orden Tacos al Pastor (5)", "precio": 50 },
+      { "platillo": "Orden Tacos al Pastor (5) c/Queso", "precio": 65 },
+      { "platillo": "Quesadilla al Pastor", "precio": 35 },
+      { "platillo": "Gringa", "precio": 60 },
+      { "platillo": "Queso Fundido al Pastor", "precio": 70 },
+      { "platillo": "Tacos Harina al Pastor", "precio": 30 },
+      { "platillo": "Cemita al Pastor", "precio": 50 },
+      { "platillo": "Cemita al Pastor c/Queso", "precio": 60 },
+      { "platillo": "Torta al Pastor", "precio": 50 },
+      { "platillo": "Torta al Pastor c/Queso", "precio": 60 }
+    ],
+    "del_trompo_arabe": [
+      { "platillo": "Taco Árabe", "precio": 30 },
+      { "platillo": "Taco Árabe c/Queso", "precio": 35 },
+      { "platillo": "Taco Harina", "precio": 30 },
+      { "platillo": "Taco de Harina c/Queso", "precio": 35 },
+      { "platillo": "Taco Oriental", "precio": 26 },
+      { "platillo": "Taco Oriental c/Queso", "precio": 30 },
+      { "platillo": "Cemita Árabe", "precio": 50 },
+      { "platillo": "Cemita Árabe c/Queso", "precio": 60 },
+      { "platillo": "Volcán Árabe", "precio": 60 },
+      { "platillo": "Volcán Orienta", "precio": 50 },
+      { "platillo": "Quesadilla Árabe", "precio": 35 },
+      { "platillo": "Quesadilla Oriental", "precio": 30 },
+      { "platillo": "Queso Fundido Árabe", "precio": 70 },
+      { "platillo": "Queso Fundido", "precio": 60 },
+      { "platillo": "Cebollitas Asadas", "precio": 10 }
+    ],
+    "hamburguesas": [
+      { "platillo": "Hamburguesa Sencilla", "precio": 50 },
+      { "platillo": "Hamburguesa Hawaiana", "precio": 60 },
+      { "platillo": "Hamburguesa Hawaiana c/Papas", "precio": 65 },
+      { "platillo": "Orden de Papas de Hojuelas", "precio": 30 }
+    ],
+    "de_la_parrilla": [
+      { "platillo": "Orden de Bistec de Puerco 40", "precio": 50 },
+      { "platillo": "Orden de Longaniza 40", "precio": 50 },
+      { "platillo": "Alambre", "precio": 160 }
+    ],
+    "x_kilo": [
+      { "platillo": "Kilo Árabe", "precio": 320 },
+      { "platillo": "1/2 Kilo Árabe", "precio": 180 },
+      { "platillo": "Kilo Carne al Pastor", "precio": 320 },
+      { "platillo": "1/2 Kilo Carne al Pastor", "precio": 180 }
+    ],
+    "bebidas": [
+      { "platillo": "Refrescos", "precio": 25 },
+      { "platillo": "Coca Familiar 2 Lts", "precio": 60 },
+      { "platillo": "Coca Familiar 3 Lts", "precio": 80 },
+      { "platillo": "Agua de Sabor", "precio": 20 },
+      { "platillo": "Agua Natural", "precio": 15 },
+      { "platillo": "Café y Té", "precio": 20 }
+    ]
+  }
+}
