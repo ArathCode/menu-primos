@@ -8,6 +8,8 @@ import Menu from './components/Menu'
 import Cart from './components/Cart'
 import OrderSummary from './components/OrderSummary'
 import Background3D from './components/Background3D'
+import logoImage from './assets/logo.png'
+import troncoImage from './assets/tronco.png'
 import { formatCurrency } from './utils/formatCurrency'
 import { normalize } from './utils/normalize'
 import CategoryTabs from './components/CategoryTabs'
@@ -102,7 +104,11 @@ function App() {
     <div className="app-shell">
       <div className={`loader ${isLoaded ? 'is-hidden' : ''}`} aria-label="Cargando menú">
         <div className="log-spinner" aria-hidden="true">
-          <span className="log-ring ring-a"></span>
+          <img
+            src={troncoImage}
+            alt="Cargando menú"
+            className="loader-image"
+          />
         </div>
         <p>Cargando menú</p>
       </div>
@@ -116,12 +122,14 @@ function App() {
           <div className="hero-copy">
             <div className="logo-lockup" aria-label="Tacos Árabes Los Primos">
               <span className="logo-top">Servicio a domicilio gratis</span>
-              <div className="logo-oval">
-                <span>Tacos</span>
-                <span className="trompo-mark" aria-hidden="true"></span>
-                <span>Árabes</span>
+              <div className="logo-image-wrapper">
+                <img
+                  src={logoImage}
+                  alt="Tacos Árabes Los Primos"
+                  className="logo-image"
+                />
               </div>
-              <span className="logo-ribbon">Los Primos</span>
+         
             </div>
             <p className="hero-sub">Del trompo, de la parrilla y por kilo. Preparado al instante que lo pides.</p>
           </div>

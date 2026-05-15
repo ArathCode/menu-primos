@@ -86,16 +86,23 @@ a {
 .loader p {
   color: var(--yellow);
   font-family: "Anton", sans-serif;
-  font-size: 1rem;
+  font-size: 1.4rem;
   letter-spacing: 0.12em;
   text-shadow: 0 3px 0 #000;
   text-transform: uppercase;
 }
 
 .log-spinner {
-  height: 112px;
+  height: 200px;
   position: relative;
-  width: 112px;
+  width: 200px;
+}
+
+.loader-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .log-ring {
@@ -236,6 +243,21 @@ main,
     0 -4px 0 var(--white),
     7px 8px 0 #000;
   text-transform: uppercase;
+}
+
+.logo-image-wrapper {
+  display: flex;
+  justify-content: center;
+  width: min(100%, 790px);
+  margin-top: clamp(0.5rem, 1.5vh, 0.9rem);
+}
+
+.logo-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .logo-oval {
@@ -1096,6 +1118,15 @@ main,
       0 2px 0 var(--white),
       0 -2px 0 var(--white),
       4px 5px 0 #000;
+  }
+
+  .logo-image-wrapper {
+    width: min(100%, 100%);
+    margin-top: 0.55rem;
+  }
+
+  .logo-image {
+    max-width: 100%;
   }
 
   .logo-oval {
