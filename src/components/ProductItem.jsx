@@ -1,15 +1,10 @@
-function ProductItem({ product, onAddToCart }) {
+function ProductItem({ product, onAddToCart, formatCurrency }) {
   return (
-    <div className="product-item">
-      <div className="product-info">
-        <div className="product-name">{product.platillo}</div>
-        <div className="product-price">${product.precio}</div>
-      </div>
-      <button
-        className="btn-order"
-        onClick={() => onAddToCart(product)}
-      >
-        Ordenar
+    <div className="menu-item">
+      <h3 className="item-name">{product.platillo}</h3>
+      <strong className="item-price">{formatCurrency(product.precio)}</strong>
+      <button className="add-btn" type="button" onClick={() => onAddToCart(product)} aria-label={`Agregar ${product.platillo}`}>
+        <i className="bi bi-plus-lg" aria-hidden="true"></i>
       </button>
     </div>
   )

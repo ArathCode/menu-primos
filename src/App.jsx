@@ -1,102 +1,195 @@
-import { useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import { useCart } from './hooks/useCart'
+import { useMenuScroll } from './hooks/useMenuScroll'
 import menuData from './data/menu_primos.json'
 import './App.css'
 import Header from './components/Header'
 import Menu from './components/Menu'
 import Cart from './components/Cart'
 import OrderSummary from './components/OrderSummary'
+import Background3D from './components/Background3D'
+import { formatCurrency } from './utils/formatCurrency'
+import { normalize } from './utils/normalize'
+import CategoryTabs from './components/CategoryTabs'
+import MobileSectionNav from './components/MobileSectionNav'
+
+const categoryLabels = {
+  del_trompo_al_pastor: 'Del trompo al pastor',
+  del_trompo_arabe: 'Del trompo árabe',
+  hamburguesas: 'Hamburguesas',
+  de_la_parrilla: 'De la parrilla',
+  x_kilo: 'X kilo',
+  bebidas: 'Bebidas',
+}
+
+
 
 function App() {
-  const [openCategory, setOpenCategory] = useState(null)
-  const [cart, setCart] = useState([])
   const [showModal, setShowModal] = useState(false)
+  const [query, setQuery] = useState('')
+  const [isLoaded, setIsLoaded] = useState(false)
 
-  const categories = Object.keys(menuData.menu).map(key => ({
-    key,
-    label: formatCategoryName(key),
-    products: menuData.menu[key]
-  }))
+  const {
+    cart,
+    addToCart,
+    removeFromCart,
+    decreaseQuantity,
+    increaseQuantity,
+    totalItems,
+    totalPrice,
+    setCart,
+  } = useCart()
 
-  function formatCategoryName(key) {
-    return key
-      .replace(/_/g, ' ')
-      .replace(/\b\w/g, letter => letter.toUpperCase())
-  }
+  const categories = useMemo(() => (
+    Object.keys(menuData.menu).map(key => ({
+      key,
+      label: categoryLabels[key] || key.replace(/_/g, ' '),
+      products: menuData.menu[key],
+    }))
+  ), [])
 
-  const toggleCategory = (categoryKey) => {
-    setOpenCategory(prev => prev === categoryKey ? null : categoryKey)
-  }
+  const filteredCategories = useMemo(() => {
+    const search = normalize(query)
+    return categories
+      .map(category => ({
+        ...category,
+        products: category.products.filter(product => normalize(product.platillo).includes(search)),
+      }))
+      .filter(category => category.products.length > 0)
+  }, [categories, query])
 
-  const addToCart = (product) => {
-    const existingItem = cart.find(item => item.platillo === product.platillo)
-    
-    if (existingItem) {
-      setCart(cart.map(item =>
-        item.platillo === product.platillo
-          ? { ...item, cantidad: item.cantidad + 1 }
-          : item
-      ))
-    } else {
-      setCart([...cart, { ...product, cantidad: 1 }])
-    }
-  }
+  const {
+    currentSectionIndex,
+    setCurrentSectionIndex,
+    isMenuInView,
+  } = useMenuScroll(filteredCategories)
 
-  const removeFromCart = (platillo) => {
-    setCart(cart.filter(item => item.platillo !== platillo))
-  }
-
-  const decreaseQuantity = (platillo) => {
-    setCart(cart.map(item =>
-      item.platillo === platillo && item.cantidad > 1
-        ? { ...item, cantidad: item.cantidad - 1 }
-        : item
-    ).filter(item => item.cantidad > 0))
-  }
-
-  const increaseQuantity = (platillo) => {
-    setCart(cart.map(item =>
-      item.platillo === platillo
-        ? { ...item, cantidad: item.cantidad + 1 }
-        : item
-    ))
-  }
-
-  const totalPrice = cart.reduce((sum, item) => sum + (item.precio * item.cantidad), 0)
+  useEffect(() => {
+    const timer = window.setTimeout(() => setIsLoaded(true), 900)
+    return () => window.clearTimeout(timer)
+  }, [])
 
   const sendOrderToWhatsApp = () => {
-    const phoneNumber = '5212481557389' // Reemplaza con tu número de WhatsApp
+    const phoneNumber = '522482080368'
     const resumen = cart
-      .map(item => `- ${item.platillo} x${item.cantidad}: $${item.precio * item.cantidad}`)
+      .map(item => `- ${item.cantidad} x ${item.platillo} ($${item.precio} c/u)`)
       .join('\n')
-
-    const mensaje = encodeURIComponent(`Hola, quiero ordenar:\n${resumen}\nTotal: $${totalPrice}`)
+    const mensaje = encodeURIComponent(`Hola, quiero hacer un pedido:\n\n${resumen}\n\nTotal: ${formatCurrency(totalPrice)}`)
     window.open(`https://wa.me/${phoneNumber}?text=${mensaje}`, '_blank')
   }
 
+
+  const scrollToSection = (index) => {
+    const sections = [...document.querySelectorAll('[data-menu-section]')]
+    const target = sections[index]
+    if (!target) return
+    setCurrentSectionIndex(index)
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
+  const scrollToCategory = (categoryKey) => {
+    if (categoryKey === 'all') {
+      document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      setCurrentSectionIndex(0)
+      return
+    }
+
+    const index = filteredCategories.findIndex(category => category.key === categoryKey)
+    if (index >= 0) scrollToSection(index)
+  }
+
   return (
-    <div className="container">
+    <div className="app-shell">
+      <div className={`loader ${isLoaded ? 'is-hidden' : ''}`} aria-label="Cargando menú">
+        <div className="log-spinner" aria-hidden="true">
+          <span className="log-ring ring-a"></span>
+        </div>
+        <p>Cargando menú</p>
+      </div>
+
+      <Background3D />
+
       <Header />
 
-      <main className="main">
-        <Menu 
-          categories={categories}
-          openCategory={openCategory}
-          onToggleCategory={toggleCategory}
-          onAddToCart={addToCart}
-        />
+      <main>
+        <section className="hero" id="inicio">
+          <div className="hero-copy">
+            <div className="logo-lockup" aria-label="Tacos Árabes Los Primos">
+              <span className="logo-top">Servicio a domicilio gratis</span>
+              <div className="logo-oval">
+                <span>Tacos</span>
+                <span className="trompo-mark" aria-hidden="true"></span>
+                <span>Árabes</span>
+              </div>
+              <span className="logo-ribbon">Los Primos</span>
+            </div>
+            <p className="hero-sub">Del trompo, de la parrilla y por kilo. Preparado al instante que lo pides.</p>
+          </div>
+
+          <aside className="service-card">
+            <span className="service-label">Pedidos</span>
+            <a href="tel:+522482080368">248 208 03 68</a>
+            <a href="tel:+522481918561">248 191 85 61</a>
+            <p>@tacosarabelosprimos</p>
+          </aside>
+
+          <a className="hero-menu-cue" href="#menu" aria-label="Ver menú">
+            <span>Ver Menú</span>
+            <i className="bi bi-chevron-down" aria-hidden="true"></i>
+          </a>
+        </section>
+
+        <section className="menu-shell" id="menu">
+          <div className="menu-heading">
+            <div>
+              <p className="section-kicker">Menú interactivo</p>
+              <h1>Elige tu orden</h1>
+            </div>
+            <label className="search-box">
+              <span>Buscar</span>
+              <input
+                type="search"
+                placeholder="Taco árabe, gringa, bebida..."
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+              />
+            </label>
+          </div>
+
+          <CategoryTabs
+            filteredCategories={filteredCategories}
+            currentSectionIndex={currentSectionIndex}
+            scrollToCategory={scrollToCategory}
+          />
+
+          <Menu categories={filteredCategories} onAddToCart={addToCart} formatCurrency={formatCurrency} />
+        </section>
       </main>
 
-      {cart.length > 0 && (
-        <Cart 
-          cartCount={cart.length}
-          onOpenModal={() => setShowModal(true)}
-        />
-      )}
+      <Cart
+        cart={cart}
+        cartCount={totalItems}
+        totalPrice={totalPrice}
+        formatCurrency={formatCurrency}
+        isVisible={isMenuInView}
+        onDecrease={decreaseQuantity}
+        onIncrease={increaseQuantity}
+        onRemove={removeFromCart}
+        onOpenModal={() => setShowModal(true)}
+      />
+
+      <MobileSectionNav
+        isMenuInView={isMenuInView}
+        currentSectionIndex={currentSectionIndex}
+        filteredCategories={filteredCategories}
+        scrollToSection={scrollToSection}
+      />
 
       <OrderSummary
         isOpen={showModal}
         cart={cart}
         totalPrice={totalPrice}
+        formatCurrency={formatCurrency}
         onClose={() => setShowModal(false)}
         onDecrease={decreaseQuantity}
         onIncrease={increaseQuantity}

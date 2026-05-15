@@ -1,7 +1,13 @@
+import HeaderNav from './HeaderNav'
+
 function Header() {
   return (
-    <header className="header">
-      <h1>Menú - Menus Primos</h1>
+    <header className="topbar">
+      <a className="brand-mini" href="#inicio" aria-label="Inicio">
+        <span>Tacos Árabes</span>
+        <strong>Los Primos</strong>
+      </a>
+      <HeaderNav />
     </header>
   )
 }
