@@ -582,7 +582,8 @@ main,
 
 .menu-items {
   display: grid;
-  gap: 1px;
+  gap: 0.8rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .menu-item {
@@ -598,6 +599,8 @@ main,
 .menu-item:nth-child(even) {
   background: rgba(255, 255, 255, 0.025);
 }
+
+  /* Mobile layout handled below; keep columns for item content */
 
 .item-name {
   color: var(--white);
@@ -617,6 +620,25 @@ main,
   text-shadow: 2px 3px 0 #000;
   white-space: nowrap;
 }
+
+.item-image-wrapper {
+  grid-column: 1 / -1;
+  height: 64px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.item-name { /* default flow */ }
+.item-price { /* default flow */ }
 
 .add-btn,
 .qty-btn,
@@ -1288,6 +1310,11 @@ main,
 
   .menu-item {
     grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .menu-items {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
   }
 
   .add-btn {

@@ -1,58 +1,59 @@
 {
   "menu": {
     "del_trompo_al_pastor": [
-      { "platillo": "Orden Tacos al Pastor (5)", "precio": 50 },
-      { "platillo": "Orden Tacos al Pastor (5) c/Queso", "precio": 65 },
-      { "platillo": "Quesadilla al Pastor", "precio": 35 },
-      { "platillo": "Gringa", "precio": 60 },
-      { "platillo": "Queso Fundido al Pastor", "precio": 70 },
-      { "platillo": "Tacos Harina al Pastor", "precio": 30 },
-      { "platillo": "Cemita al Pastor", "precio": 50 },
-      { "platillo": "Cemita al Pastor c/Queso", "precio": 60 },
-      { "platillo": "Torta al Pastor", "precio": 50 },
-      { "platillo": "Torta al Pastor c/Queso", "precio": 60 }
+      { "platillo": "Orden Tacos al Pastor (5)", "precio": 50 , "image": "https://tse1.mm.bing.net/th/id/OIP.C0f33llsg57W2J20LeemBAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" },
+      { "platillo": "Orden Tacos al Pastor (5) c/Queso", "precio": 65 , "image": "https://tse1.mm.bing.net/th/id/OIP.1xAGtLRTthTQMR1TawkM_gHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" },
+      { "platillo": "Quesadilla al Pastor", "precio": 35 , "image": "https://tse1.mm.bing.net/th/id/OIP.ypw19WXlkZqb9Qqd4EW9fwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" },
+      { "platillo": "Gringa", "precio": 60 , "image": "https://th.bing.com/th/id/R.a5d7767c2865ae798104ead1548a18a8?rik=HItbBfpm3UwVnA&pid=ImgRaw&r=0" },
+      { "platillo": "Queso Fundido al Pastor", "precio": 70 , "image": "https://tse3.mm.bing.net/th/id/OIP.ti5SCeS4-y-sg87y-wO8WwHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" },
+      { "platillo": "Tacos Harina al Pastor", "precio": 30 , "image": "https://tse3.mm.bing.net/th/id/OIP.Hbrir163Osspb_XDZ-eq7AHaEt?rs=1&pid=ImgDetMain&o=7&rm=3" },
+      { "platillo": "Tacos Harina al Pastor c/Queso", "precio": 35 , "image": "https://th.bing.com/th/id/R.021948dcea036f9b950466ab5754bde6?rik=pa1NtS7aLwNbWw&riu=http%3a%2f%2ftaqueriamediooriente.com%2fwp-content%2fuploads%2f2019%2f03%2ftaco-pastor-harina-queso.jpg&ehk=elrMSWKiJ%2bpjVgWWKj%2ftAHsfE7m2GKOBibMNOZ3dDA4%3d&risl=&pid=ImgRaw&r=0" },
+      { "platillo": "Cemita al Pastor", "precio": 50 , "image": "https://th.bing.com/th/id/R.403a8a8522486b08d6e09937aa63b173?rik=mPEeRY1ll%2fCnYQ&riu=http%3a%2f%2f1.bp.blogspot.com%2f_6G0jDaPp0eo%2fTPW9_ZSi11I%2fAAAAAAAACxE%2fymeVTl_MTMw%2fs1600%2f15%2bcema.jpg&ehk=6disS30FBWakSxKDj3UlgKtdwUeNwoop2PROPnRDv7M%3d&risl=&pid=ImgRaw&r=0" },
+      { "platillo": "Cemita al Pastor c/Queso", "precio": 60 , "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/4a/5f/10/pulled-pork-with-collard.jpg?w=300&h=200&s=1" },
+      { "platillo": "Torta al Pastor", "precio": 50 , "image": "https://as2.ftcdn.net/v2/jpg/02/89/53/85/1000_F_289538597_ZklDd6NfUKVrRSiDLi35yRv5Aws72IES.jpg" },
+      { "platillo": "Torta al Pastor c/Queso", "precio": 60 , "image": "https://th.bing.com/th/id/OIP.PHn2Gox2p8zC_uMl0jV38AHaE8?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" }
     ],
     "del_trompo_arabe": [
-      { "platillo": "Taco Árabe", "precio": 30 },
-      { "platillo": "Taco Árabe c/Queso", "precio": 35 },
-      { "platillo": "Taco Harina", "precio": 30 },
-      { "platillo": "Taco de Harina c/Queso", "precio": 35 },
-      { "platillo": "Taco Oriental", "precio": 26 },
-      { "platillo": "Taco Oriental c/Queso", "precio": 30 },
-      { "platillo": "Cemita Árabe", "precio": 50 },
-      { "platillo": "Cemita Árabe c/Queso", "precio": 60 },
-      { "platillo": "Volcán Árabe", "precio": 60 },
-      { "platillo": "Volcán Oriental", "precio": 50 },
-      { "platillo": "Quesadilla Árabe", "precio": 35 },
-      { "platillo": "Quesadilla Oriental", "precio": 30 },
-      { "platillo": "Queso Fundido Árabe", "precio": 70 },
-      { "platillo": "Queso Fundido", "precio": 60 },
-      { "platillo": "Cebollitas Asadas", "precio": 10 }
+      { "platillo": "Taco Árabe", "precio": 30 , "image": "https://th.bing.com/th/id/R.9e696a76fb7a1b6d56340e0c2a75e2f0?rik=jrP7y%2fxPc7ow2w&riu=http%3a%2f%2ftaqueriamediooriente.com%2fwp-content%2fuploads%2f2021%2f02%2fEspecialidad-Tacos-Arabes-1.jpg&ehk=qm31g6BmR2QHeeCQunmEuNpaHJksYACahQ3xaIVvQ30%3d&risl=&pid=ImgRaw&r=0" },
+      { "platillo": "Taco Árabe c/Queso", "precio": 35 , "image": "https://www.maspormas.com/img/2016/10/taco-%C3%A1rabe-principal.jpg" },
+      { "platillo": "Taco Harina", "precio": 30 , "image": "https://www.cocinadelirante.com/800x600/filters:format(webp):quality(75)/sites/default/files/images/2023/01/tacos-arabes-caseros-receta-poblana.jpg" },
+      { "platillo": "Taco de Harina c/Queso", "precio": 35 , "image": "https://images.rappi.com.mx/products/977761736-1590429443498.jpg" },
+      { "platillo": "Taco Oriental", "precio": 26 , "image": "https://i.pinimg.com/736x/a3/4f/f3/a34ff3661affda19a8c24bc6645c5013.jpg" },
+      { "platillo": "Taco Oriental c/Queso", "precio": 30 , "image": "https://th.bing.com/th/id/R.2c31889fe1dad9d3e579c6728cd61463?rik=z0LoFjLA%2fWGAeA&riu=http%3a%2f%2ftaqueriamediooriente.com%2fwp-content%2fuploads%2f2019%2f03%2fArabito-con-Queso-800x527.jpg&ehk=yVSUEXw52YovPrQd44Wd6S11eLZAtJ7aWSuByhL4ck0%3d&risl=&pid=ImgRaw&r=0" },
+      { "platillo": "Cemita Árabe", "precio": 50 , "image": "https://tse4.mm.bing.net/th/id/OIP.fHvfrIdjIFS1nujqea-plwHaD2?rs=1&pid=ImgDetMain&o=7&rm=3" },
+      { "platillo": "Cemita Árabe c/Queso", "precio": 60 , "image": "https://tse4.mm.bing.net/th/id/OIP.dK6Nf7Pt3mLe_Y_Arr-4pAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" },
+      { "platillo": "Volcán Árabe", "precio": 60 , "image": "https://i.pinimg.com/originals/ca/0a/25/ca0a25c0e6c24da8ddb6386b4d5eb06c.jpg" },
+      { "platillo": "Volcán Oriental", "precio": 50 , "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyhz4v7XVtv-ajUNlIPDOANw87twEBPjcWuw&s" },
+      { "platillo": "Quesadilla Árabe", "precio": 35 , "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkDKkSxm8zCGBjgqOVXbFUGitHXkt-OiVOFg&s" },
+      { "platillo": "Quesadilla Oriental", "precio": 30 , "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPFvBUB2EIe7TnD5oizAodAIKJHQeaeX9GNg&s" },
+      { "platillo": "Queso Fundido Árabe", "precio": 70 , "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0PjSAev69FlK5ft7wlKjJoYmgu0ONu-74mA&s" },
+      { "platillo": "Queso Fundido", "precio": 60 , "image": "https://www.cookedbyjulie.com/wp-content/uploads/2024/05/queso-fundido-one.jpg" },
+      { "platillo": "Cebollitas Asadas", "precio": 10 , "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXcmqpflZ2rQXPJP97qYn4XBxS1S80uoP3OA&s" }
     ],
     "hamburguesas": [
-      { "platillo": "Hamburguesa Sencilla", "precio": 50 },
-      { "platillo": "Hamburguesa Hawaiana", "precio": 60 },
-      { "platillo": "Hamburguesa Hawaiana c/Papas", "precio": 65 },
-      { "platillo": "Orden de Papas de Hojuelas", "precio": 30 }
+      { "platillo": "Hamburguesa Sencilla", "precio": 50, "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqIvY_EddgWVLKNZD3S-xTjijRkfogKFxFkA&s"   },
+      { "platillo": "Hamburguesa Hawaiana", "precio": 60, "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeQbd8-Y5Xa423gderXj_a3_bjANkY0Bzhuw&s" },
+      { "platillo": "Hamburguesa Hawaiana c/Papas", "precio": 65, "image":"https://www.gastrolabweb.com/u/fotografias/m/2025/5/26/f850x638-77224_154713_5050.jpg" },
+      { "platillo": "Orden de Papas de Hojuelas", "precio": 30, "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7enB0nRncdcIaRg8R6ntbvxRqr9dFiceBOQ&s" }
     ],
     "de_la_parrilla": [
-      { "platillo": "Orden de Bistec de Puerco 40", "precio": 50 },
-      { "platillo": "Orden de Longaniza 40", "precio": 50 },
-      { "platillo": "Alambre", "precio": 160 }
+      { "platillo": "Orden de Bistec de Puerco 40", "precio": 50, "image": "https://thumbs.dreamstime.com/z/filete-asado-la-parrilla-del-cuello-del-cerdo-cerdo-de-carne-asada-mientras-que-asa-la-parrilla-93654061.jpg" },
+      { "platillo": "Orden de Longaniza 40", "precio": 50, "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxQhaF7J6lLsSHerdNk_DQFM-X2_BTiF0-fw&s" },
+      { "platillo": "Alambre", "precio": 160, "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJwXf9QkXccpS4-PmtrKJ15Bp7hlQKXnFbPg&s" }
     ],
     "x_kilo": [
-      { "platillo": "Kilo Árabe", "precio": 320 },
-      { "platillo": "1/2 Kilo Árabe", "precio": 180 },
-      { "platillo": "Kilo Carne al Pastor", "precio": 320 },
-      { "platillo": "1/2 Kilo Carne al Pastor", "precio": 180 }
+      { "platillo": "Kilo Árabe", "precio": 320, "image": "https://images.rappi.com.mx/products/975744226-1539977193.png" },
+      { "platillo": "1/2 Kilo Árabe", "precio": 180 , "image": "https://th.bing.com/th/id/R.be25afe15b913e9a4e404478abc9618e?rik=SkrSNArBg13Opg&riu=http%3a%2f%2ftaqueriamediooriente.com%2fwp-content%2fuploads%2f2019%2f03%2f1-kilo-carne-arabe-1-800x527.jpg&ehk=KDPKq7J8Gr7nOvWC7y6POoYaxIAhZudwbZwq4cU6zQg%3d&risl=&pid=ImgRaw&r=0"},
+      { "platillo": "Kilo Carne al Pastor", "precio": 320, "image":"https://www.lasalsapremier.mx/wp-content/uploads/2019/09/kilo-1-600x600.jpg" },
+      { "platillo": "1/2 Kilo Carne al Pastor", "precio": 180 , "image":"https://www.lasalsapremier.mx/wp-content/uploads/2017/06/kilo-de-carne.jpg"}
     ],
     "bebidas": [
-      { "platillo": "Refrescos", "precio": 25 },
-      { "platillo": "Coca Familiar 2 Lts", "precio": 60 },
-      { "platillo": "Coca Familiar 3 Lts", "precio": 80 },
-      { "platillo": "Agua de Sabor", "precio": 20 },
-      { "platillo": "Agua Natural", "precio": 15 },
-      { "platillo": "Café y Té", "precio": 20 }
+      { "platillo": "Refrescos", "precio": 25, "image": "https://www.thedailymeal.com/img/gallery/the-inspiration-behind-the-shape-of-coca-colas-iconic-original-bottle/intro-1672949640.jpg" },
+      { "platillo": "Coca Familiar 2 Lts", "precio": 60, "image": "https://image.shutterstock.com/z/stock-photo-coca-cola-logo-on-classic-cola-bottles-and-sugar-free-on-an-ice-cube-background-thirst-and-1958475301.jpg" },
+      { "platillo": "Coca Familiar 3 Lts", "precio": 80, "image": "https://image.shutterstock.com/image-photo/kuala-lumpur-malaysia-december-2017-260nw-774696331.jpg" },
+      { "platillo": "Agua de Sabor", "precio": 20, "image": "https://tse2.mm.bing.net/th/id/OIP.R1HRhz6R70iZ08_-oVN1cAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" },
+      { "platillo": "Agua Natural", "precio": 15, "image": "https://media.istockphoto.com/id/1454305820/es/foto/agua-que-se-vierte-de-una-botella-de-pl%C3%A1stico-en-un-vaso-de-precipitados-de-vidrio-sobre-un.jpg?s=170667a&w=0&k=20&c=LUSXp9ktdxQ6v8rs434LXe-CZrWivX1-bvdH2hSGBBE=" },
+      { "platillo": "Café y Té", "precio": 20, "image": "https://tse2.mm.bing.net/th/id/OIP.jipZWQH4tSjxvgyt9SimlAHaD_?rs=1&pid=ImgDetMain&o=7&rm=3" }
     ]
   }
 }
