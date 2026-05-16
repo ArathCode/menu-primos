@@ -10,6 +10,7 @@ import OrderSummary from './components/OrderSummary'
 import Background3D from './components/Background3D'
 import logoImage from './assets/logo.png'
 import troncoImage from './assets/tronco.png'
+import videoPrimos from './assets/video_primos.mp4'
 import { formatCurrency } from './utils/formatCurrency'
 import { normalize } from './utils/normalize'
 import CategoryTabs from './components/CategoryTabs'
@@ -100,6 +101,9 @@ function App() {
     if (index >= 0) scrollToSection(index)
   }
 
+  // Ruta del video: reemplaza por la ruta que quieras usar
+  const videoSrc = '/assets/video_primos.mp4'
+
   return (
     <div className="app-shell">
       <div className={`loader ${isLoaded ? 'is-hidden' : ''}`} aria-label="Cargando menú">
@@ -146,7 +150,19 @@ function App() {
             <i className="bi bi-chevron-down" aria-hidden="true"></i>
           </a>
         </section>
-
+        <section className="video-section" aria-label="Video promocional">
+          <div className="video-wrapper">
+            <video
+              src={videoPrimos}
+              playsInline
+              muted
+              loop
+              autoPlay
+              controls
+              className="responsive-video"
+            />
+          </div>
+        </section>
         <section className="menu-shell" id="menu">
           <div className="menu-heading">
             <div>
@@ -163,7 +179,7 @@ function App() {
               />
             </label>
           </div>
-
+          
           <CategoryTabs
             filteredCategories={filteredCategories}
             currentSectionIndex={currentSectionIndex}
@@ -172,6 +188,8 @@ function App() {
 
           <Menu categories={filteredCategories} onAddToCart={addToCart} formatCurrency={formatCurrency} />
         </section>
+
+        
       </main>
 
       <Cart
