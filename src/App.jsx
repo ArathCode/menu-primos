@@ -11,6 +11,7 @@ import Background3D from './components/Background3D'
 import logoImage from './assets/logo.png'
 import troncoImage from './assets/tronco.png'
 import videoPrimos from './assets/video_primos.mp4'
+import { useRef } from 'react';
 import { formatCurrency } from './utils/formatCurrency'
 import { normalize } from './utils/normalize'
 import CategoryTabs from './components/CategoryTabs'
@@ -28,6 +29,9 @@ const categoryLabels = {
 
 
 function App() {
+  const videoRef = useRef(null);
+  const [isMuted, setIsMuted] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [showModal, setShowModal] = useState(false)
   const [query, setQuery] = useState('')
   const [isLoaded, setIsLoaded] = useState(false)
@@ -101,8 +105,26 @@ function App() {
     if (index >= 0) scrollToSection(index)
   }
 
-  // Ruta del video: reemplaza por la ruta que quieras usar
-  const videoSrc = '/assets/video_primos.mp4'
+
+  const handleVideoClick = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      video.play();
+      setIsPlaying(true);
+    } else {
+      video.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  const handleMuteClick = (e) => {
+    e.stopPropagation();
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !video.muted;
+    setIsMuted(video.muted);
+  };
 
   return (
     <div className="app-shell">
@@ -151,16 +173,46 @@ function App() {
           </a>
         </section>
         <section className="video-section" aria-label="Video promocional">
-          <div className="video-wrapper">
+          <div className="video-wrapper" style={{position: 'relative'}}>
             <video
+              ref={videoRef}
               src={videoPrimos}
               playsInline
-              muted
               loop
               autoPlay
-              controls
+              muted={isMuted}
               className="responsive-video"
+              onClick={handleVideoClick}
+              style={{cursor: 'pointer'}}
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
             />
+            <button
+              className="video-mute-btn"
+              type="button"
+              aria-label={isMuted ? 'Activar sonido' : 'Silenciar'}
+              onClick={handleMuteClick}
+              style={{
+                position: 'absolute',
+                top: 12,
+                right: 18,
+                zIndex: 2,
+                background: 'none',
+                border: 'none',
+                padding: 0,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                boxShadow: 'none',
+              }}
+            >
+              {isMuted ? (
+                <i className="bi bi-volume-mute-fill video-mute-icon"></i>
+              ) : (
+                <i className="bi bi-volume-up-fill video-mute-icon"></i>
+              )}
+            </button>
           </div>
         </section>
         <section className="menu-shell" id="menu">

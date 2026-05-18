@@ -9,14 +9,21 @@ function MobileSectionNav({ isMenuInView, currentSectionIndex, filteredCategorie
       >
         <i className="bi bi-arrow-up-short" aria-hidden="true"></i>
       </button>
-      <button
-        className={`mobile-section-next ${!isMenuInView || currentSectionIndex >= filteredCategories.length - 1 ? 'is-disabled' : ''}`}
-        type="button"
-        aria-label="Bajar a la siguiente sección"
-        onClick={() => scrollToSection(currentSectionIndex + 1)}
-      >
-        <i className="bi bi-arrow-down-short" aria-hidden="true"></i>
-      </button>
+      <div className="mobile-section-next-wrapper">
+        {isMenuInView && currentSectionIndex < filteredCategories.length - 1 && (
+          <span className="mobile-section-next-label">
+            {filteredCategories[currentSectionIndex + 1]?.label}
+          </span>
+        )}
+        <button
+          className={`mobile-section-next ${!isMenuInView || currentSectionIndex >= filteredCategories.length - 1 ? 'is-disabled' : ''}`}
+          type="button"
+          aria-label="Bajar a la siguiente sección"
+          onClick={() => scrollToSection(currentSectionIndex + 1)}
+        >
+          <i className="bi bi-arrow-down-short" aria-hidden="true"></i>
+        </button>
+      </div>
     </div>
   )
 }
